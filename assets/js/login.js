@@ -61,6 +61,7 @@ $(function() {
             type: 'post',
             data: $(this).serialize(),
             success: function(res) {
+
                 if (res.status !== 0) {
                     return layer.msg(res.message);
                 }
