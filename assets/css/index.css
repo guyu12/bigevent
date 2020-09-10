@@ -47,3 +47,7 @@ iframe {
     color: #fff;
     margin-right: 10px;
 }
+
+#welcome {
+    user-select: none;
+}
