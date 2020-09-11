@@ -41,14 +41,14 @@ $(function() {
                 renderAvater(res.data)
             },
             // 无论成功与否都有
-            complete: function(res) {
-                console.log(res);
-                if (res.responseJSON.message === '身份认证失败！' && res.responseJSON.status === 1) {
+            // complete: function(res) {
+            //     console.log(res);
+            //     if (res.responseJSON.message === '身份认证失败！' && res.responseJSON.status === 1) {
 
-                    location.href = './login.html';
-                    localStorage.removeItem('token');
-                }
-            }
+            //         location.href = './login.html';
+            //         localStorage.removeItem('token');
+            //     }
+            // }
         })
     }
     //渲染头像
