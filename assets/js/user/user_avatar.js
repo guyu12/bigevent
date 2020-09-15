@@ -13,33 +13,34 @@
 
   //   点击上传按钮更换图片
   $('#btnChooseImage').on('click', function() {
-      $('#file').click();
+      $('#file').click()
   })
 
   //   当选择的input发生状态变化时，可以获取到选择的值
   $('#file').on('change', function(e) {
-          //   console.log(e);
-          var filelist = e.target.files
-          console.log(filelist);
-          if (filelist.lengtn === 0) {
-              return layui.layer.msg('请选择图片')
-          }
+      //   console.log(e)
+      var filelist = e.target.files
+      console.log(filelist)
+      if (filelist.lengtn === 0) {
+          return layui.layer.msg('请选择图片')
+      }
 
-          //   拿到用户选择的图片
-          var file = e.target.files[0];
+      //   拿到用户选择的图片
+      var file = e.target.files[0]
           //   根据选择的文件，创建一个对应的 URL 地址：
-          var newImgURL = URL.createObjectURL(file);
+      var newImgURL = URL.createObjectURL(file)
           //   先销毁旧的裁剪区域，再重新设置图片路径，之后再创建新的裁剪区域
-          $image
-              .cropper('destroy') // 销毁旧的裁剪区域
-              .attr('src', newImgURL) // 重新设置图片路径
-              .cropper(options) // 重新初始化裁剪区域
-      })
-      // 点击确定按钮上传图片
+      $image
+          .cropper('destroy') // 销毁旧的裁剪区域
+          .attr('src', newImgURL) // 重新设置图片路径
+          .cropper(options) // 重新初始化裁剪区域
+  })
+
+  // 点击确定按钮上传图片
   $('#btnUpload').on('click', function(e) {
       e.preventDefault()
           // 获取裁剪的图片
-      console.log(111);
+      console.log(111)
       var dataURL = $image
           .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
               width: 100,
@@ -54,7 +55,7 @@
               avatar: dataURL,
           },
           success: function(res) {
-              console.log(res);
+              console.log(res)
               if (res.status !== 0) {
                   return layui.layer.msg('头像上传失败')
               }

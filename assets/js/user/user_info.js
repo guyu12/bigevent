@@ -6,7 +6,7 @@ $(function() {
         nickname: [
             /^[\u0391-\uFFE5A-Za-z0-9]{1,6}$/, '昵称必须1-6个字符之间'
         ]
-    });
+    })
     initUserInfo()
         // 获取用户基本信息
     function initUserInfo() {

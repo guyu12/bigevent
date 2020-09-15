@@ -53,7 +53,7 @@ $(function() {
     // 监听表单登陆提交事件
     $('#form_login').on('submit', function(e) {
         // 阻止默认行为
-        console.log(111);
+        // console.log(111);
         e.preventDefault();
 
         $.ajax({

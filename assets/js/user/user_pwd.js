@@ -31,6 +31,8 @@ $(function() {
                 }
                 layui.layer.msg('密码更新成功')
                 $('.layui-form')[0].reset()
+                localStorage.removeItem('token')
+                top.window.location.href = '../login.html'
 
             }
         })
